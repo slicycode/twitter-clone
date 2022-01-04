@@ -10,7 +10,7 @@ export default NextAuth({
     }),
   ],
   callbacks: {
-    async session({ session, token }) {
+    async session({ session, token, user }) {
       session.user.tag = session.user.name
         .split(' ')
         .join('')
