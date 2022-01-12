@@ -81,21 +81,25 @@ function Post({ id, post, postPage }) {
       onClick={() => router.push(`/${id}`)}
     >
       {!postPage && (
-        <img src={post?.userImg} className="h-11 w-11 rounded-full mr-4" />
+        <img
+          src={post?.userImg}
+          alt=""
+          className="h-11 w-11 rounded-full mr-4"
+        />
       )}
       <div className="flex flex-col space-y-2 w-full">
         <div className={`flex ${!postPage && 'justify-between'}`}>
           {postPage && (
             <img
               src={post?.userImg}
-              alt="Profile Picture"
+              alt="Profile Pic"
               className="h-11 w-11 rounded-full mr-4"
             />
           )}
           <div className="text-[#6e767d]">
             <div className="inline-block group">
               <h4
-                className={`font-bold text=[15px] sm:text-[#d9d9d9] group-hover:underline ${
+                className={`font-bold text-[15px] sm:text-base text-[#d9d9d9] group-hover:underline ${
                   !postPage && 'inline-block'
                 }`}
               >
@@ -106,13 +110,13 @@ function Post({ id, post, postPage }) {
               >
                 @{post?.tag}
               </span>
-            </div>{' '}
+            </div>
             ·{' '}
             <span className="hover:underline text-sm sm:text-[15px]">
               <Moment fromNow>{post?.timestamp?.toDate()}</Moment>
             </span>
             {!postPage && (
-              <p className="text-[#d9d9d9] text-[15px] sm:text-base mt-0.5 mb-1">
+              <p className="text-[#d9d9d9] text-[15px] sm:text-base mt-0.5">
                 {post?.text}
               </p>
             )}
@@ -122,24 +126,22 @@ function Post({ id, post, postPage }) {
           </div>
         </div>
         {postPage && (
-          <p className="text-[#d9d9d9] text-[15px] sm:text-base mt-0.5">
-            {post?.text}
-          </p>
+          <p className="text-[#d9d9d9] mt-0.5 text-xl">{post?.text}</p>
         )}
         <img
           src={post?.image}
           alt=""
-          className="rounded-2xl max-h=[700px] object-cover mr-2"
+          className="rounded-2xl max-h-[700px] object-cover mr-2"
         />
         <div
-          className={`flex justify-between w-10/12 text-[#6e767d] ${
+          className={`text-[#6e767d] flex justify-between w-10/12 ${
             postPage && 'mx-auto'
           }`}
         >
           <div
             className="flex items-center space-x-1 group"
             onClick={(e) => {
-              e.stopPropagation() // prevents routing when clicking on this div
+              e.stopPropagation()
               setPostId(id)
               setIsOpen(true)
             }}
@@ -154,11 +156,11 @@ function Post({ id, post, postPage }) {
             )}
           </div>
 
-          {session.user.uid === post?.id ? ( // check if the uid of the current session matches the post id so it prevents deleting others' posts ( changes the trash icon to a retweet icon )
+          {session.user.uid === post?.id ? (
             <div
               className="flex items-center space-x-1 group"
               onClick={(e) => {
-                e.stopPropagation() // prevents routing when clicking on this div
+                e.stopPropagation()
                 deleteDoc(doc(db, 'posts', id))
                 router.push('/')
               }}
@@ -178,7 +180,7 @@ function Post({ id, post, postPage }) {
           <div
             className="flex items-center space-x-1 group"
             onClick={(e) => {
-              e.stopPropagation() // prevents routing when clicking on this div
+              e.stopPropagation()
               likePost()
             }}
           >

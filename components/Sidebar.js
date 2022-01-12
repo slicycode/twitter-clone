@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import SidebarLink from './SidebarLink'
 import { HomeIcon } from '@heroicons/react/solid'
 import {
   HashtagIcon,
@@ -11,10 +10,13 @@ import {
   DotsCircleHorizontalIcon,
   DotsHorizontalIcon,
 } from '@heroicons/react/outline'
-import { signOut, useSession } from 'next-auth/react'
+import SidebarLink from './SidebarLink'
+import { signOut } from 'next-auth/react'
+import { useSession } from 'next-auth/react'
 
 function Sidebar() {
   const { data: session } = useSession()
+
   return (
     <div className="hidden sm:flex flex-col items-center xl:items-start xl:w-[340px] p-2 fixed h-full">
       <div className="flex items-center justify-center w-14 h-14 logo p-0 xl:ml-24">
@@ -34,7 +36,7 @@ function Sidebar() {
         Tweet
       </button>
       <div
-        className="text-[#d9d9d9] flex items-center justify-center hoverAnimation xl:ml-auto xl:-mr-5 mt-auto"
+        className="text-[#d9d9d9] flex items-center justify-center mt-auto hoverAnimation xl:ml-auto xl:-mr-5"
         onClick={signOut}
       >
         <img
