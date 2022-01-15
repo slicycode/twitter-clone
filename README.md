@@ -12,7 +12,7 @@ or
 npm start
 ```
 
-Make sure to build in first :
+Make sure to build the project first before running it :
 
 ```bash
 next build
