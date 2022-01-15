@@ -1,4 +1,4 @@
-# THE DEPLOYEMENT OF THIS PROJECT DOESN'T WORK YET 
+# THE DEPLOYMENT OF THIS PROJECT DOESN'T WORK YET 
 
 You can still clone it and use it on local :
 
