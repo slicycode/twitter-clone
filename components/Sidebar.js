@@ -40,6 +40,7 @@ function Sidebar() {
         onClick={signOut}
       >
         <img
+          referrerPolicy="no-referrer"
           src={session.user.image}
           alt=""
           className="h-10 w-10 rounded-full xl:mr-2.5"

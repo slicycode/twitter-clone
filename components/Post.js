@@ -91,6 +91,7 @@ function Post({ id, post, postPage }) {
         <div className={`flex ${!postPage && 'justify-between'}`}>
           {postPage && (
             <img
+              referrerPolicy="no-referrer"
               src={post?.userImg}
               alt="Profile Pic"
               className="h-11 w-11 rounded-full mr-4"

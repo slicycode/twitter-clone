@@ -85,6 +85,7 @@ function Input() {
       }`}
     >
       <img
+        referrerPolicy="no-referrer"
         src={session.user.image}
         alt=""
         className="h-11 w-11 rounded-full cursor-pointer"
