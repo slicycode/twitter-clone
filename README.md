@@ -1,6 +1,9 @@
-# THE DEPLOYMENT OF THIS PROJECT DOESN'T WORK YET 
+![💻Twitter-clone](https://user-images.githubusercontent.com/60575576/151675837-cc07a2b6-066c-4850-9482-18f31b8c0e2e.png)
 
-You can still clone it and use it on local :
+
+
+
+You can clone it and use it on local :
 
 ```bash
 yarn run dev
